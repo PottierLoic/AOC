@@ -1,26 +1,28 @@
 #include "aoc.hpp"
 
-std::string readInputFromFile(const std::string& filePath) {
+std::vector<std::string> readInputFromFile(const std::string& filePath) {
   std::ifstream inputFile(filePath);
   if (!inputFile.is_open()) {
     std::cerr << "Error opening file: " << filePath << std::endl;
-    return "";
+    return {};
   }
 
-  std::string input;
-  std::getline(inputFile, input);
+  std::vector<std::string> lines;
+  std::string line;
+  while (std::getline(inputFile, line)) {
+    lines.push_back(line);
+  }
 
   inputFile.close();
-  return input;
+  return lines;
 }
 
 int main() {
   std::cout << "Starting 2023 Advent of Code !" << std::endl;
 
-  std::string content = readInputFromFile(INPUTS[0]);
+  for (std::size_t i = 0; i < FUNCTIONS_PTR.size(); ++i) {
+    FUNCTIONS_PTR[i](readInputFromFile(INPUTS[i]));
+  }
 
-  // for (auto& func : functionPointers) {
-  //   std::string argument = "Argument for " + std::to_string(&func);
-  //   func(argument);
-  // }
+  return 0;
 }

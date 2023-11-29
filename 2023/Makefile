@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++20 -Wall
-SRC=src/main.cpp src/day01.cpp src/day02.cpp
+SRC=$(wildcard src/*.cpp)
 EXECUTABLE = aoc
 
 main:
