@@ -34,6 +34,7 @@ int main() {
   std::cout << "Starting 2023 Advent of Code !" << std::endl;
 
   for (std::size_t i = 0; i < FUNCTIONS_PTR.size(); ++i) {
+    std::cout << "----- Running day " << i + 1 << " -----" << std::endl;
     auto start = std::chrono::high_resolution_clock::now();
     FUNCTIONS_PTR[i](readInput(INPUTS[i]));
     auto end = std::chrono::high_resolution_clock::now();
