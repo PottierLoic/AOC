@@ -17,5 +17,5 @@ fn main() {
 	for i in 0 .. list1.len {
 		dist += math.abs(list2[i] - list1[i])
 	}
-	println('Total distance is ${dist}')
+	println(dist)
 }

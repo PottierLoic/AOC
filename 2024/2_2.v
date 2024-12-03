@@ -19,7 +19,7 @@ fn is_safe_report(levels []int) bool {
 }
 
 fn main() {
-	content := os.read_lines('./inputs/2') or { panic(err) }
+	content := os.read_lines('./inputs/2')!
 	mut safe_count := 0
 	for line in content {
 		levels := line.split(' ').map(it.int())
