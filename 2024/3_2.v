@@ -1,15 +1,15 @@
 import os
 
 fn main() {
-	content := os.read_file('./inputs/3') or { panic(err) }
+	content := os.read_file('./inputs/3')!
 	mut total := 0
 	mut i := 0
   mut enabled := true
 	for i < content.len {
-    if i + 4 <= content.len && content[i..i + 3] == 'do()' {
+    if i + 4 <= content.len && content[i..i + 4] == 'do()' {
       enabled = true
       i += 4
-    } else if i + 7 <= content.len && content[i..i + 5] == "don't()" {
+    } else if i + 7 <= content.len && content[i..i + 7] == "don't()" {
       enabled = false
       i += 7
     } else if enabled && i + 4 <= content.len && content[i..i + 4] == 'mul(' {

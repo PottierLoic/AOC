@@ -1,7 +1,7 @@
 import os
 
 fn main() {
-	content := os.read_file('./inputs/3') or { panic(err) }
+	content := os.read_file('./inputs/3')!
 	mut total := 0
 	mut i := 0
 	for i < content.len {
